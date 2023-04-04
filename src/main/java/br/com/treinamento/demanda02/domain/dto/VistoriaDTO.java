@@ -1,7 +1,9 @@
 package br.com.treinamento.demanda02.domain.dto;
 
+import br.com.treinamento.demanda02.enums.NivelCombustivel;
 import br.com.treinamento.demanda02.enums.Resultado;
 import br.com.treinamento.demanda02.enums.Situacao;
+import br.com.treinamento.demanda02.enums.TipoCombustivel;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -29,13 +31,15 @@ public class VistoriaDTO implements Serializable {
     private String modelo;
     private short ano;
     private float km;
+    private TipoCombustivel tipoCombustivel;
+    private NivelCombustivel nivelCombustivel;
+    private String cor;
+    private String avariaAparente;
+    private String chassi;
 
     private Date data;
-
     private Situacao situacaoExtintor;
     private Situacao situacaoParabrisa;
     private Situacao situacaoFarois;
-
     private Resultado resultado;
-
 }

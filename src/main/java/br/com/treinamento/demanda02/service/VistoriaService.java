@@ -5,7 +5,6 @@ import br.com.treinamento.demanda02.domain.model.Vistoria;
 import br.com.treinamento.demanda02.mapper.VistoriaMapper;
 import br.com.treinamento.demanda02.repository.VistoriaRepository;
 import lombok.RequiredArgsConstructor;
-import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -34,7 +33,7 @@ public class VistoriaService {
         vistoriaRepository.deleteById(id);
     }
 
-    public VistoriaDTO update(String id, @NotNull VistoriaDTO vistoriaDTO) {
+    public VistoriaDTO update(String id, VistoriaDTO vistoriaDTO) {
         vistoriaDTO.setId(id);
         Vistoria entity = mapper.toEntity(vistoriaDTO);
         entity = vistoriaRepository.save(entity);
