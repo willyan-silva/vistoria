@@ -1,16 +1,13 @@
 package br.com.treinamento.demanda02.domain.model;
 
-import br.com.treinamento.demanda02.enums.NivelCombustivel;
-import br.com.treinamento.demanda02.enums.Resultado;
-import br.com.treinamento.demanda02.enums.Situacao;
-import br.com.treinamento.demanda02.enums.TipoCombustivel;
+import br.com.treinamento.demanda02.enums.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
@@ -22,7 +19,7 @@ public class Vistoria implements Serializable {
     private String id;
 
     private String placa;
-    private String marca;
+    private Marca marca;
     private String modelo;
     private short ano;
     private float km;
@@ -32,7 +29,7 @@ public class Vistoria implements Serializable {
     private String avariaAparente;
     private String chassi;
 
-    private Date data;
+    private LocalDateTime data;
     private Situacao situacaoExtintor;
     private Situacao situacaoParabrisa;
     private Situacao situacaoFarois;

@@ -2,6 +2,7 @@ package br.com.treinamento.demanda02.service;
 
 import br.com.treinamento.demanda02.domain.dto.VistoriaDTO;
 import br.com.treinamento.demanda02.domain.model.Vistoria;
+import br.com.treinamento.demanda02.enums.Marca;
 import br.com.treinamento.demanda02.mapper.VistoriaMapper;
 import br.com.treinamento.demanda02.repository.VistoriaRepository;
 import lombok.RequiredArgsConstructor;
@@ -27,6 +28,10 @@ public class VistoriaService {
 
     public List<VistoriaDTO> listarVeiculos() {
         return mapper.listToDTO(vistoriaRepository.findAll());
+    }
+
+    public List<VistoriaDTO> listarVeiculosPorMarca() {
+        return mapper.listToDTO(vistoriaRepository.findAllByMarca(Marca.FIAT));
     }
 
     public void removerVeiculo(String id) {

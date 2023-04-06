@@ -24,15 +24,21 @@ public class VistoriaController {
     public VistoriaDTO create(@RequestBody VistoriaDTO vistoriaDTO) {
         return service.salvarVeiculo(vistoriaDTO);
     }
+
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-        //@Operation(summary = "Cria um Cartão")
     List<VistoriaDTO> read() {
         return service.listarVeiculos();
     }
 
+    @GetMapping ("/veiculoPorMarca")
+    @ResponseStatus(HttpStatus.OK)
+    List<VistoriaDTO> readVeiculoPorMarca() {
+        return service.listarVeiculosPorMarca();
+    }
+
     @DeleteMapping(value = "/{id}")
-    @ResponseStatus(HttpStatus.ACCEPTED)
+    @ResponseStatus(HttpStatus.NO_CONTENT)
         //@Operation(summary = "Cria um Cartão")
     void delete(@PathVariable String id) {
         service.removerVeiculo(id);

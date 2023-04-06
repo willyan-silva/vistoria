@@ -1,9 +1,6 @@
 package br.com.treinamento.demanda02.domain.dto;
 
-import br.com.treinamento.demanda02.enums.NivelCombustivel;
-import br.com.treinamento.demanda02.enums.Resultado;
-import br.com.treinamento.demanda02.enums.Situacao;
-import br.com.treinamento.demanda02.enums.TipoCombustivel;
+import br.com.treinamento.demanda02.enums.*;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -23,11 +20,9 @@ import java.util.Date;
 public class VistoriaDTO implements Serializable {
     private static final long serialVersionUID = -1L;
 
-    @Id
     private String id;
-
     private String placa;
-    private String marca;
+    private Marca marca;
     private String modelo;
     private short ano;
     private float km;
@@ -37,7 +32,7 @@ public class VistoriaDTO implements Serializable {
     private String avariaAparente;
     private String chassi;
 
-    private Date data;
+    private LocalDateTime data;
     private Situacao situacaoExtintor;
     private Situacao situacaoParabrisa;
     private Situacao situacaoFarois;
